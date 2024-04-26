@@ -33,10 +33,5 @@ steps:
     tags: '$(Build.BuildId)'
 
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'mw-image-registry'
-    repository: $(imageRepository)
-    command: 'push'
-    Dockerfile: '**/docker/Dockerfile'
-    tags: 'latest'
+
+
