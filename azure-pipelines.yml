@@ -17,9 +17,19 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'mw-image-registry'
-    repository: 'mediawiki'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    tags: 'mwapp.azurecr.io/medw:$(Build.BuildId)'
+    repository: $(imageRepository)
+    command: 'build'
+    Dockerfile: '**/docker/Dockerfile'
+    tags: '$(Build.BuildId)'
+
+- script: docker image ls
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'mw-image-registry'
+    repository: $(imageRepository)
+    command: 'push'
+    Dockerfile: '**/docker/Dockerfile'
+    tags: '$(Build.BuildId)'
 
 
