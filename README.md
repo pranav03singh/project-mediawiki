@@ -16,15 +16,25 @@ Project is divided into three parts:\
 ## Development of the Mediawiki Docker image and storing in repo.
 
 The Mediawiki Application consist of the frontend application and backend database for storing data. In our case, we have used MariaDB official image. This is the [Dockerfile](/docker/Dockerfile) which is used for the Mediawiki frontend, which is based on the PHP8.1 image. The image was built and stored in Azure Container Registery(ACR).
+</br>
+
+</br>
 
 ## Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.
 
 Using Terraform code for the Azure Kubernetes Service (AKS) the basic cluster was built. 
 [This](/terraform/main.tf) is the Terraform code used in the project.
+</br>
+
+</br>
 
 ## Development of Helm Charts for deployment on AKS cluster.
 
 Helm charts are used to make the Mediawiki application images and configuration reusable, therefore the Kubernetes manifest file for deployment and service were bundled as [Mediawiki application helm charts](/helm/mediawiki/). On the other hand, the Kubernetes manifest file for deployment, service, configmap and persistent volume were bundled as [Mediawiki-db helm charts](/helm/mediawiki-db/).
+
+</br>
+
+</br>
 
 ## Deployment and configuration of the Mediawiki Application
 
@@ -34,14 +44,30 @@ Helm charts are used to make the Mediawiki application images and configuration 
 2. Deploy the backend Mediawiki Database using [db-values.yaml](/helm/db-values.yaml).
 	  > **helm upgrade mediawikidb mediawiki-db -f .\db-values.yaml  --install**
 
-3.  Since the deployment is on AKS, Loadbalancer service type was used 
+3.  Since the deployment is on AKS, LoadBalancer service type was used 
 	  > ![Mediawikilogo](/files/service.png)
 4. Go to the browser and access the External-IP for mediawikiapp-svc (from the previous step).
 	  > ![Mediawikilogo](/files/frontpage.png)
-5. Proceed with next steps and for the database configuration, grab the db cluster IP, database name, database user and database password.
+5. To proceed with next steps for the database configuration, grab the db cluster IP, database name, database user and database password.
 
 	  >  ![Mediawikilogo](/files/dbconfig.png)
 
-6. Proceed for the next steps installations.
+6. Then, proceed for the next steps of installation.
 
 	  >  ![Mediawikilogo](/files/nextsteps.png)
+
+7. Hooray!! Wikimedia is configured, and ready to use.
+
+</br>
+
+
+
+
+
+</br>
+
+Connect with me:\
+Pranav Singh\
+Email: pranavksingh28@gmail.com\
+Linkedin: https://www.linkedin.com/in/pranav03singh/ 
+ 
