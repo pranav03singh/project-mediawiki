@@ -14,7 +14,7 @@ Project is divided into three parts:
 
 ## Development of the Mediawiki Docker image and storing in repo.
 
-The Mediawiki Application consist of the frontend application and backend database for storing data. In our case we have used MariaDB official image. This is the Dockerfile which is used for the Mediawiki frontend, which is based on the PHP8.1 image. The image was built and was stored in Azure Container Registery(ACR).
+The Mediawiki Application consist of the frontend application and backend database for storing data. In our case we have used MariaDB official image. This is the [Dockerfile](/docker/Dockerfile) which is used for the Mediawiki frontend, which is based on the PHP8.1 image. The image was built and was stored in Azure Container Registery(ACR).
 
 ## Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.
 
@@ -23,7 +23,7 @@ Using Terraform code for the Azure Kubernetes Service (AKS) the basic cluster wa
 
 ## Development of Helm Charts for deployment on AKS cluster.
 
-Helm charts are used to make the Mediawiki Application images and configuration reusable, therefore the Kubernetes Manifest file for deployment, service and persistent volume were bundled as Mediawiki application helm charts. On the other hand, the Kubernetes Manifest file for deployment, service, configmap and persistent volume were bundled as Mediawiki-db helm charts.
+Helm charts are used to make the Mediawiki Application images and configuration reusable, therefore the Kubernetes Manifest file for deployment and service were bundled as [Mediawiki application helm charts](/helm/mediawiki/). On the other hand, the Kubernetes Manifest file for deployment, service, configmap and persistent volume were bundled as [Mediawiki-db helm charts](/helm/mediawiki-db/).
 
 ## Deployment and configuration of the Mediawiki Application
 
