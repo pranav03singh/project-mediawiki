@@ -6,6 +6,7 @@ mediawikiapp:
   image: mwapp.azurecr.io/mediawiki:95
   replicaCount: 2
   pullPolicy: Always
+  storageClassName: managed-csi
 
 
 mediawikisvc:
@@ -14,4 +15,4 @@ mediawikisvc:
      app: mediawiki
   type: LoadBalancer
   port: 80
-  storageClassName: managed-csi
+  
