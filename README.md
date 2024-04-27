@@ -2,7 +2,11 @@
 # Welcome to MediaWiki Project!
 
 The MediaWiki software is used by tens of thousands of websites and thousands of companies and organisations. MediaWiki helps you collect and organise knowledge and make it available to people.
+<pre>
 
+
+
+</pre>
 
 # Project Architecture
 
