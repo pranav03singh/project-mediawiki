@@ -6,7 +6,7 @@ The MediaWiki software is used by tens of thousands of websites and thousands of
 
 # Project Architecture
 
-Project is divided into three parts:
+Project is divided into three parts:\
 		**a.  Development of the Mediawiki Docker image and storing in repo.** \
 		**b. Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.**\
 		**c.  Development of Helm Charts for deployment on AKS cluster.**\ 
@@ -24,7 +24,7 @@ Using Terraform code for the Azure Kubernetes Service (AKS) the basic cluster wa
 
 ## Development of Helm Charts for deployment on AKS cluster.
 
-Helm charts are used to make the Mediawiki Application images and configuration reusable, therefore the Kubernetes Manifest file for deployment and service were bundled as [Mediawiki application helm charts](/helm/mediawiki/). On the other hand, the Kubernetes Manifest file for deployment, service, configmap and persistent volume were bundled as [Mediawiki-db helm charts](/helm/mediawiki-db/).
+Helm charts are used to make the Mediawiki application images and configuration reusable, therefore the Kubernetes manifest file for deployment and service were bundled as [Mediawiki application helm charts](/helm/mediawiki/). On the other hand, the Kubernetes manifest file for deployment, service, configmap and persistent volume were bundled as [Mediawiki-db helm charts](/helm/mediawiki-db/).
 
 ## Deployment and configuration of the Mediawiki Application
 
