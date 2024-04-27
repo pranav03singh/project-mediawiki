@@ -7,15 +7,15 @@ The MediaWiki software is used by tens of thousands of websites and thousands of
 # Project Architecture
 
 Project is divided into three parts:
-		**a.  Development of the Mediawiki Docker image and storing in repo.**
-		**b. Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.**
-		**c.  Development of Helm Charts for deployment on AKS cluster.** 
+		**a.  Development of the Mediawiki Docker image and storing in repo.** \
+		**b. Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.**\
+		**c.  Development of Helm Charts for deployment on AKS cluster.**\ 
 </br>
 
 
 ## Development of the Mediawiki Docker image and storing in repo.
 
-The Mediawiki Application consist of the frontend application and backend database for storing data. In our case we have used MariaDB official image. This is the [Dockerfile](/docker/Dockerfile) which is used for the Mediawiki frontend, which is based on the PHP8.1 image. The image was built and was stored in Azure Container Registery(ACR).
+The Mediawiki Application consist of the frontend application and backend database for storing data. In our case, we have used MariaDB official image. This is the [Dockerfile](/docker/Dockerfile) which is used for the Mediawiki frontend, which is based on the PHP8.1 image. The image was built and stored in Azure Container Registery(ACR).
 
 ## Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.
 
