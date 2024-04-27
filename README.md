@@ -27,10 +27,10 @@ Helm charts are used to make the Mediawiki Application images and configuration 
 
 ## Deployment and configuration of the Mediawiki Application
 
-1. Deploy the Mediawiki frontend application helm charts.
+1. Deploy the Mediawiki frontend application helm charts using [app-values.yaml]/helm/app-values.yaml).
 	 >  **helm upgrade mediawiki mediawiki -f .\app-values.yaml  --install**
   
-2. Deploy the backend Mediawiki Database
+2. Deploy the backend Mediawiki Database using [db-values.yaml](/helm/db-values.yaml).
 	  > **helm upgrade mediawikidb mediawiki-db -f .\db-values.yaml  --install**
 
 3.  Since the deployment is on AKS, Loadbalancer service type was used 
