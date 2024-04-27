@@ -9,7 +9,7 @@ The MediaWiki software is used by tens of thousands of websites and thousands of
 Project is divided into three parts:\
 		**a.  Development of the Mediawiki Docker image and storing in repo.** \
 		**b. Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.**\
-		**c.  Development of Helm Charts for deployment on AKS cluster.**\ 
+		**c.  Development of Helm Charts for deployment on AKS cluster.**
 </br>
 
 
