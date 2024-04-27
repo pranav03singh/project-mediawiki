@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.mediawikiapp.name  }}
+  labels:
+    {{ .Values.mediawikiapp.labels | indent 12 }}
+spec:
+  replicas: {{ .Values.mediawikiapp.replicaCount }}
+  selector:
+    matchLabels:
+      {{ .Values.mediawikiapp.labels | indent 12 }}
+  template:
+    metadata:
+      labels:
+        {{ .Values.mediawikiapp.labels | indent 12 }}
+    spec:
+      containers:
+        - name: {{ .Values.mediawikiapp.name }}
+          image: {{ .Values.mediawikiapp.image }}
+          imagePullPolicy: {{ .Values.mediawikiapp.pullPolicy }}
+          volumeMounts:
+            - name: {{ .Values.mediawikiapp.name }}-data
+              mountPath: /var/www/html/images
+      volumes:
+      - name: {{ .Values.mediawikiapp.name }}-data
+        persistentVolumeClaim:
+          claimName: {{ .Values.mediawikiapp.name }}-data

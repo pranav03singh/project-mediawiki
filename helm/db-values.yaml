@@ -1,0 +1,24 @@
+
+MYSQL_DATABASE: mediawikidb
+MYSQL_USER: wikiuser
+
+
+mediawikidb:
+  name: mediawikidb-deploy
+  labels: |
+     db: mediawiki
+  image: mariadb
+  replicaCount: 2
+  pullPolicy: Always  
+  storageClassName: managed-csi
+
+
+service:
+  type: ClusterIP
+  port: 3306
+  targetport: 3306
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""

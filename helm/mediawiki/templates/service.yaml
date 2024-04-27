@@ -1,0 +1,13 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: {{ .Values.mediawikisvc.name }}
+#   labels:
+#     {{ .Values.mediawikisvc.labels | indent 12 }}
+# spec:
+#   type: {{ .Values.mediawikisvc.type }}
+#   ports:
+#     - port: {{ .Values.mediawikisvc.port }}
+#       protocol: TCP
+#   selector:
+#      {{ .Values.mediawikisvc.labels | indent 12 }}

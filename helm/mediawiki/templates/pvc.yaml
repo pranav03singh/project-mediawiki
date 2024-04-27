@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.mediawikiapp.name }}-data
+  labels:
+    {{ .Values.mediawikiapp.labels | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.mediawikiapp.storageClassName }}
+  resources:
+    requests:
+      storage: 5Gi

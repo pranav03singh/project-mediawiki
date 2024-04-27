@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.mediawikidb.name }}
+  labels:
+    {{ .Values.mediawikidb.labels | indent 12 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+       {{ .Values.mediawikidb.labels | indent 12 }}
+  template:
+    metadata:
+      labels:
+       {{ .Values.mediawikidb.labels | indent 12 }}
+    spec:
+      serviceAccountName: {{ .Values.mediawikidb.serviceAccountName }}
+      containers:
+        - name: {{.Values.mediawikidb.name }}
+          image: {{ .Values.mediawikidb.image }}
+          imagePullPolicy: {{ .Values.mediawikidb.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: {{ .Values.mediawikidb.name }}-secret
+            - configMapRef:
+                name: {{ .Values.mediawikidb.name }}-cfmap
+          ports:
+            - name: http
+              containerPort: 3306
+              protocol: TCP
+          resources:
+          volumeMounts:
+            - name: {{ .Values.mediawikidb.name }}-data
+              mountPath: /var/lib/mysql
+      volumes:
+      - name: {{ .Values.mediawikidb.name }}-data
+        persistentVolumeClaim:
+          claimName: {{ .Values.mediawikidb.name }}-data
