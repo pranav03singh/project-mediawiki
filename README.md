@@ -19,7 +19,7 @@ The Mediawiki Application consist of the frontend application and backend databa
 ## Building of Azure Kubernetes Service (AKS) infrastructure using Terraform code.
 
 Using Terraform code for the Azure Kubernetes Service (AKS) the basic cluster was built. 
-The is the Terraform code used in the project.
+[This](/terraform/main.tf) is the Terraform code used in the project.
 
 ## Development of Helm Charts for deployment on AKS cluster.
 
