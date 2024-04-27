@@ -65,9 +65,5 @@ Helm charts are used to make the Mediawiki application images and configuration 
 
 
 </br>
-
-Connect with me:\
-Pranav Singh\
-Email: pranavksingh28@gmail.com\
-Linkedin: https://www.linkedin.com/in/pranav03singh/ 
+ 
  
