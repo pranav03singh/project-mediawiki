@@ -34,6 +34,13 @@ Helm charts are used to make the Mediawiki Application images and configuration 
 	  > **helm upgrade mediawikidb mediawiki-db -f .\db-values.yaml  --install**
 
 3.  Since the deployment is on AKS, Loadbalancer service type was used 
-	  > ![Mediawikilogo](/files/service.png )
+	  > ![Mediawikilogo](/files/service.png)
 4. Go to the browser and access the External-IP for mediawikiapp-svc (from the previous step).
+	  > ![Mediawikilogo](/files/frontpage.png)
+5. Proceed with next steps and for the database configuration, grab the db cluster IP, database name, database user and database password.
 
+	  >  ![Mediawikilogo](/files/dbconfig.png)
+
+6. Proceed for the next steps installations.
+
+	  >  ![Mediawikilogo](/files/nextsteps.png)

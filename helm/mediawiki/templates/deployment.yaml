@@ -18,10 +18,5 @@ spec:
         - name: {{ .Values.mediawikiapp.name }}
           image: {{ .Values.mediawikiapp.image }}
           imagePullPolicy: {{ .Values.mediawikiapp.pullPolicy }}
-          volumeMounts:
-            - name: {{ .Values.mediawikiapp.name }}-data
-              mountPath: /var/www/html/images
-      volumes:
-      - name: {{ .Values.mediawikiapp.name }}-data
-        persistentVolumeClaim:
-          claimName: {{ .Values.mediawikiapp.name }}-data
+          ports:
+            - containerPort: 80

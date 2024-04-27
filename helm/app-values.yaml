@@ -3,10 +3,9 @@ mediawikiapp:
   name: mediawikiapp-deploy
   labels: |
      app: mediawiki
-  image: mwapp.azurecr.io/mediawiki:95
+  image: mwapp.azurecr.io/mediawiki:latest
   replicaCount: 2
   pullPolicy: Always
-  storageClassName: managed-csi
 
 
 mediawikisvc:
