@@ -30,33 +30,38 @@ Using Terraform code for the Azure Kubernetes Service (AKS) the basic cluster wa
 
 ## Development of Helm Charts for deployment on AKS cluster.
 
-Helm charts are used to make the Mediawiki application images and configuration reusable, therefore the Kubernetes manifest file for deployment and service were bundled as [Mediawiki application helm charts](/helm/mediawiki/). On the other hand, the Kubernetes manifest file for deployment, service, configmap and persistent volume were bundled as [Mediawiki-db helm charts](/helm/mediawiki-db/).
+Helm charts are used to make the Mediawiki application images and configuration reusable, therefore the Kubernetes manifest file for deployment and service were bundled as [Mediawiki application helm charts](/helm/mediawiki/). On the other hand, the Kubernetes manifest file for deployment, service, configmap and persistent volume were bundled as [Mediawiki-db helm charts](/helm/mediawiki-db/). The Helm manifest for the application is packaged and is stored in the Github repository: https://pranav03singh.github.io/mediawikiapp/ .
 
 </br>
 
 </br>
 
 ## Deployment and configuration of the Mediawiki Application
+1. Add the Helm package repository.
+	 >  **helm repo add mediawikirepo https://pranav03singh.github.io/mediawikiapp/** 
+	  > ![Mediawikilogo](/files/helmsearch.png)
 
-1. Deploy the Mediawiki frontend application helm charts using [app-values.yaml](/helm/app-values.yaml).
+	 	
+2. Deploy the Mediawiki frontend application helm charts using [app-values.yaml](/helm/app-values.yaml).
 	 >  **helm upgrade mediawiki mediawiki -f .\app-values.yaml  --install**
+	
   
-2. Deploy the backend Mediawiki Database using [db-values.yaml](/helm/db-values.yaml).
+3. Deploy the backend Mediawiki Database using [db-values.yaml](/helm/db-values.yaml).
 	  > **helm upgrade mediawikidb mediawiki-db -f .\db-values.yaml  --install**
 
-3.  Since the deployment is on AKS, LoadBalancer service type was used 
+4.  Since the deployment is on AKS, LoadBalancer service type was used 
 	  > ![Mediawikilogo](/files/service.png)
-4. Go to the browser and access the External-IP for mediawikiapp-svc (from the previous step).
+5. Go to the browser and access the External-IP for mediawikiapp-svc (from the previous step).
 	  > ![Mediawikilogo](/files/frontpage.png)
-5. To proceed with next steps for the database configuration, grab the db cluster IP, database name, database user and database password.
+6. To proceed with next steps for the database configuration, grab the db cluster IP, database name, database user and database password.
 
 	  >  ![Mediawikilogo](/files/dbconfig.png)
 
-6. Then, proceed for the next steps of installation.
+7. Then, proceed for the next steps of installation.
 
 	  >  ![Mediawikilogo](/files/nextsteps.png)
 
-7. Hooray!! Wikimedia is configured, and ready to use.
+8. Hooray!! Wikimedia is configured, and ready to use.
 
 </br>
 
